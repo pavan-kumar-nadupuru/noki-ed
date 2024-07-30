@@ -8,7 +8,6 @@ import { Menu as MenuIcon } from "@mui/icons-material";
 import Sidebar from "./components/Sidebar";
 import Dashboard from "./pages/Dashboard";
 import About from "./pages/About";
-import TodoListPage from "./pages/TodoList";
 import "./App.scss";
 
 function App() {
@@ -61,7 +60,6 @@ function App() {
 							<Routes>
 								<Route path="/" element={<Dashboard />} />
 								<Route path="/about" element={<About />} />
-								<Route path="/todos" element={<TodoListPage />} />
 							</Routes>
 						</main>
 						<footer className="app-footer">

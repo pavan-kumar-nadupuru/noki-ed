@@ -22,12 +22,6 @@ const Sidebar = () => (
 				</ListItemIcon>
 				<ListItemText primary="About" />
 			</ListItem>
-			<ListItem component={Link} to="/todos">
-				<ListItemIcon>
-					<ListIcon />
-				</ListItemIcon>
-				<ListItemText primary="Todos" />
-			</ListItem>
 		</List>
 		<div className="p-3">
 			<ThemeToggle />
