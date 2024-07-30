@@ -20,10 +20,10 @@
   left: 0;
   top: 0;
   overflow-y: auto;
-  border-right: 1px solid $gray-300;
+  border-right: 1px solid var(--mui-palette-divider);
 
   .sidebar-header {
-    border-bottom: 1px solid $gray-300;
+    border-bottom: 1px solid var(--mui-palette-divider);
   }
 }
 
@@ -37,12 +37,11 @@
 .main-content {
   flex: 1;
   padding: 2rem;
-  background-color: $background-color;
 }
 
 .app-footer {
-  background-color: darken($background-color, 5%);
-  padding: 0.5rem;
+  background-color: var(--mui-palette-background-paper);
+  padding: 1rem;
   text-align: center;
 }
 

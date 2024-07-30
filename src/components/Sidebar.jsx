@@ -1,8 +1,8 @@
-// src/components/Sidebar.jsx
 import React from "react";
 import { Link } from "react-router-dom";
 import { List, ListItem, ListItemText, ListItemIcon } from "@mui/material";
 import { Dashboard, Info, List as ListIcon } from "@mui/icons-material";
+import ThemeToggle from "./ThemeToggle";
 
 const Sidebar = () => (
 	<div className="sidebar bg-light">
@@ -29,6 +29,9 @@ const Sidebar = () => (
 				<ListItemText primary="Todos" />
 			</ListItem>
 		</List>
+		<div className="p-3">
+			<ThemeToggle />
+		</div>
 	</div>
 );
 

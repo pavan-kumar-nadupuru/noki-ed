@@ -1,6 +1,6 @@
-// src/App.jsx
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { IconButton } from "@mui/material";
@@ -11,18 +11,29 @@ import About from "./pages/About";
 import TodoListPage from "./pages/TodoList";
 import "./App.scss";
 
-const theme = createTheme({
-	palette: {
-		primary: {
-			main: "#1976d2",
-		},
-		secondary: {
-			main: "#dc004e",
-		},
-	},
-});
-
 function App() {
+	const themeMode = useSelector((state) => state.theme);
+
+	const theme = useMemo(
+		() =>
+			createTheme({
+				palette: {
+					mode: themeMode,
+					primary: {
+						main: themeMode === "light" ? "#1976d2" : "#90caf9",
+					},
+					secondary: {
+						main: themeMode === "light" ? "#dc004e" : "#f48fb1",
+					},
+					background: {
+						default: themeMode === "light" ? "#f5f5f5" : "#303030",
+						paper: themeMode === "light" ? "#ffffff" : "#424242",
+					},
+				},
+			}),
+		[themeMode],
+	);
+
 	const [sidebarOpen, setSidebarOpen] = useState(false);
 
 	const toggleSidebar = () => {
