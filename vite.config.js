@@ -33,6 +33,8 @@ export default defineConfig(({ command, mode }) => {
 		},
 		server: {
 			historyApiFallback: true,
+			port: env.PORT ? Number.parseInt(env.PORT) : 5000,
+			open: true
 		},
 		// Automatically expose all non-VITE_ variables
 		define: processEnv,
