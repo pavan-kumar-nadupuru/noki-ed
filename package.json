@@ -4,10 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "",
-    "preview": "vite preview"
+    "dev": "vite --mode development",
+    "build": "vite build --mode production",
+    "preview": "vite preview --mode production",
+    "lint": ""
   },
   "dependencies": {
     "@emotion/react": "^11.13.0",
@@ -25,7 +25,7 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
-    "sass": "^1.77.8",
+    "sass": "^1.77.6",
     "vite": "^5.3.4"
   }
 }

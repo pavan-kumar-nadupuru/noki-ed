@@ -10,12 +10,12 @@
 @import './styles/mixins';
 
 .app-container {
-  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 .sidebar {
   width: 250px;
-  height: 100vh;
+  height: 100dvh;
   position: fixed;
   left: 0;
   top: 0;
@@ -31,7 +31,7 @@
   margin-left: 250px;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 .main-content {

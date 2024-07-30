@@ -54,9 +54,7 @@ function App() {
 							</Routes>
 						</main>
 						<footer className="app-footer">
-							<p>
-								© <b>Noki Ed</b> - A product of Thinkhat Inc.
-							</p>
+							<p>© 2024 {import.meta.env.VITE_APP_NAME}</p>
 						</footer>
 					</div>
 				</div>
