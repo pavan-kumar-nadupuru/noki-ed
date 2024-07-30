@@ -1,11 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { List, ListItem, ListItemText, ListItemIcon } from "@mui/material";
-import { Dashboard, Info, List as ListIcon } from "@mui/icons-material";
+import {
+	List,
+	ListItem,
+	ListItemText,
+	ListItemIcon,
+	IconButton,
+} from "@mui/material";
+import {
+	Dashboard,
+	Info,
+	ChevronLeft,
+	ChevronRight,
+} from "@mui/icons-material";
 import ThemeToggle from "./ThemeToggle";
 
-const Sidebar = () => (
-	<div className="sidebar bg-light">
+const Sidebar = ({ isOpen, toggleSidebar }) => (
+	<div className={`sidebar bg-light ${isOpen ? "open" : "closed"}`}>
 		<div className="sidebar-header">
 			<h3 className="m-0 p-3">Noki Ed</h3>
 		</div>
@@ -25,6 +36,11 @@ const Sidebar = () => (
 		</List>
 		<div className="p-3">
 			<ThemeToggle />
+		</div>
+		<div className="sidebar-footer">
+			<IconButton onClick={toggleSidebar}>
+				{isOpen ? <ChevronLeft /> : <ChevronRight />}
+			</IconButton>
 		</div>
 	</div>
 );
