@@ -1,0 +1,91 @@
+// src/App.scss
+
+// Import our variables first
+@import './styles/variables';
+
+// Then import Bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// You can also import other partial files if you have them
+@import './styles/mixins';
+
+.app-container {
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow-y: auto;
+  border-right: 1px solid $gray-300;
+
+  .sidebar-header {
+    border-bottom: 1px solid $gray-300;
+  }
+}
+
+.content-wrapper {
+  margin-left: 250px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  background-color: $background-color;
+}
+
+.app-footer {
+  background-color: darken($background-color, 5%);
+  padding: 0.5rem;
+  text-align: center;
+}
+
+// Custom styles for MUI components
+.MuiButton-root {
+  text-transform: none;
+}
+
+// Media query for responsive design
+@include media-breakpoint-down(md) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+  }
+
+  .content-wrapper {
+    margin-left: 0;
+  }
+
+  .main-content {
+    padding: 1rem;
+  }
+}
+
+.sidebar-toggle {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+}
+
+@include media-breakpoint-down(md) {
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .sidebar-open .sidebar {
+    transform: translateX(0);
+  }
+
+  .content-wrapper {
+    margin-left: 0;
+  }
+}
